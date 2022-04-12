@@ -1,0 +1,39 @@
+<%
+const basePath = '.';
+const title = 'Home';
+const description = 'Home';
+const keyword = 'Home';
+%>
+<html lang="ja">
+<head>
+    <%- include('partials/_head', { basePath, title, description, keyword }); %>
+</head>
+<body>
+    <%- include('layout/_header', { basePath }); %>
+
+    <main class="c-main">
+        <section class="c-mainvisual">
+            <div class="c-mainvisual__image">
+              <img class="c-mainvisual__image--item scale1" src="/assets/images/entex_0605-15.jpg" alt="">
+              <img class="c-mainvisual__image--item" src="/assets/images/entex_0605-89.jpg" alt="">
+              <img class="c-mainvisual__image--item" src="/assets/images/entex_0605-117.jpg" alt="">
+            </div>
+            <div class="c-mainvisual__inner">
+              <h1 class="c-mainvisual__text">
+                <p>若い力を</p>
+                <p>発揮できる環境が</p>
+                <p>ココにはある。</p>
+              </h1>
+              <p class="c-mainvisual__scroll">SCROLL</p>
+              <div class="c-mainvisual__content">
+                <p>暮らしの未来<span>を一緒に作る仲間を募集しています。</span></p>
+              </div>
+            </div>
+          </section>
+
+    </main>
+    <!-- end main -->
+
+    <%- include('layout/_footer', { basePath }); %>
+</body>
+</html>

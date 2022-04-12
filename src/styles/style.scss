@@ -1,0 +1,429 @@
+@charset "utf-8";
+// ---------------------------------------------------------------
+//  ■Core
+//  Mixinやfontの設定など
+// ---------------------------------------------------------------
+@import 'core/variable/**';
+@import 'core/mixin/**';
+// ---------------------------------------------------------------
+//  ■Foundation
+//  リセットCSS、NormarizeCSSなどの、すべてのベースとなるCSS
+//  基本的にコードは追加しない
+// ---------------------------------------------------------------
+@import 'foundation/reset';
+@import 'foundation/base';
+
+// ---------------------------------------------------------------
+//  ■Layout
+//  パーツの配置や、ラッパーとしての幅や高さなどを決定するクラス
+//  接頭辞としてl-をつける
+// ---------------------------------------------------------------
+@import 'layout/**';
+
+// ---------------------------------------------------------------
+//  ■object
+//  ページをまたいで使われる各種パーツを定義するクラス
+//  そのパーツ内で常に同様の振る舞いをするものに関してのみスタイルを定義
+// ---------------------------------------------------------------
+@import 'components/**';
+
+// ---------------------------------------------------------------
+//  ■Page
+//  ページ個別のスタイルを定義するクラス
+// ---------------------------------------------------------------
+@import './page/**';
+
+ol ul {
+    list-style: none;
+}
+
+ins {
+    text-decoration: none;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: '游ゴシック', Yu Gothic, YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.sp-only {
+    display: none;
+}
+
+.c-header {
+    background-color: #fff;
+}
+
+.c-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 21px;
+    padding-right: 20px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+    background-color: #fff;
+}
+
+.c-header__logo {
+    max-width: 14.2%;
+    z-index: 1000;
+}
+
+.c-header__icon--play {
+    width: 24px;
+    margin-right: 10px;
+}
+
+.c-header__nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 10px;
+    margin-right: 26px;
+    white-space: nowrap;
+    background-color: #fff;
+
+    li {
+        font-size: 1.6rem;
+        color: #0080cc;
+        font-weight: 400;
+        text-align: center;
+
+        a {
+            position: relative;
+            line-height: 4.5rem;
+            padding: 0 20px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 20px;
+                width: 0;
+                height: 2px;
+                background-color: #0080cc;
+            }
+
+            &:hover {
+                &::after {
+                    width: calc(100% - 40px);
+                    transition: 0.3s linear;
+                }
+            }
+        }
+
+        &:active {
+            &::after {
+                width: calc(100% - 40px);
+            }
+        }
+    }
+}
+
+.c-header__recruit {
+    margin-top: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+
+    img {
+        display: inline-block;
+        width: 20px;
+    }
+}
+
+.c-header__recruit--container {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 35px;
+}
+
+.c-header__recruit--sub {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0080cc;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    position: relative;
+
+    img {
+        width: 27px;
+        margin-left: 26px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 8%;
+        top: 50%;
+        transform: translateY(-50%);
+        background-image: url('assets/image/assignment.png');
+        width: 27px;
+        height: 27px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+.c-header__menu {    
+    img {
+        width: 30px;
+    }
+
+    .c-header__menu--img1 {
+        display: none;
+    }
+
+    .c-header__menu--img2 {
+        display: block;
+    }
+
+    &:active {
+        .c-header__menu--img1 {
+            display: block;
+        }
+    
+        .c-header__menu--img2 {
+            display: none;
+        }
+    }
+
+}
+
+.c-header__text {
+    display: inline-block;
+    justify-items: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-left: 6px;
+    color: #fff;
+}
+
+.c-header__text--sub {
+    font-size: 2.4rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.c-header__link {
+    padding: 14px 40px 10px 34px;
+    background-color: #0080cc;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.3rem;
+    white-space: nowrap;
+}
+
+.c-footer {
+    margin-top: 85px;
+    border-top: 1px solid #0080cc;
+}
+
+.c-footer__inner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 80px;
+    padding-left: 21px;
+    padding-right: 20px;
+    padding-top: 16px;
+}
+
+.c-footer__logo {
+    max-width: 14.2%;
+    margin-top: 10px;
+}
+
+.c-footer__nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 9px;
+    margin-right: 26px;
+    white-space: nowrap;
+    background-color: #fff;
+
+    li {
+        font-size: 1.6rem;
+        color: #0080cc;
+        font-weight: 400;
+        text-align: center;
+
+        a {
+            position: relative;
+            line-height: 4.5rem;
+            padding: 0 16px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 16px;
+                width: 0;
+                height: 2px;
+                background-color: #0080cc;
+            }
+
+            &:hover {
+                &::after {
+                    width: calc(100% - 32px);
+                    transition: 0.3s linear;
+                }
+            }
+        }
+    }
+}
+
+.c-footer__recruit {
+    margin-top: 4px;
+
+    img {
+        display: inline-block;
+        width: 20px;
+    }
+}
+
+.c-footer__text {
+    display: inline-block;
+    justify-items: center;
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-left: 6px;
+    color: #fff;
+}
+
+.c-footer__link {
+    padding: 14px 40px 10px 34px;
+    background-color: #0080cc;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.3rem;
+    white-space: nowrap;
+}
+
+.c-footer__mess {
+    padding-left: 60px;
+    padding-top: 13px;
+    padding-right: 60px;
+    margin-top: 11px;
+    text-align: right;
+    border-top: 1px solid #efefef;
+
+    a {
+        color: #a0a0a0;
+        text-decoration: underline;
+    }
+}
+
+.c-footer__mess--inner {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.c-footer__coppy--right {
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #0080cc;
+    text-align: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin-top: 11px;
+}
+
+.l-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.c-mainvisual {
+    position: relative;
+
+    &__inner {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        bottom: 0;
+        width: 960px;
+    }
+
+    &__image {
+        height: 770px;
+        overflow: hidden;
+    }
+}    
+
+.c-mainvisual__image {
+    height: 770px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    
+}
+
+img.scale1 {
+    transition: all 6s linear;
+    animation: scale01 6s infinite;
+}
+
+    
+img.scale2 {
+    visibility: hidden;
+    transition: all 6s linear;
+    animation: scale02 6s infinite;
+}
+
+img.scale3 {
+    visibility: hidden;
+    transition: all 6s linear;
+    animation: scale03 6s infinite;
+}
