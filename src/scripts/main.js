@@ -3,6 +3,16 @@ import $ from 'jquery';
 const $window = $(window)
 const INTERVAL = 30
 
+const showBox1 = document.querySelectorAll('.c-pam__icon');
+const box = document.querySelector('.c-pam__modal');
+
+showBox1[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+    box.classList.add('active');
+    let show = showItem[0].getAttribute('data-url');
+    boxImage.setAttribute('src', '/assets/images/' + show)
+})
+
 var setIn = function () {
   var inRatio = 1
   var $ins = $('[data-in]')

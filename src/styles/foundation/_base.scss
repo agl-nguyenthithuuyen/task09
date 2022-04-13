@@ -3,6 +3,7 @@ base - 基本設定
 ========================================================= */
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
 }
 
 html,
@@ -17,11 +18,14 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-sizing: border-box;
-    font-family: '游ゴシック', Yu Gothic, YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
     font-size: 1.4rem;
     line-height: 1.5;
     font-weight: 400;
     background-repeat: no-repeat;
+}
+
+body {
+    font-family: '游ゴシック', Yu Gothic, YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
 }
 
 a {
@@ -51,10 +55,6 @@ a {
     }
 }
 
-ol ul {
-    list-style: none;
-}
-
 ins {
     text-decoration: none;
 }
@@ -71,11 +71,6 @@ a {
 img {
     max-width: 100%;
     vertical-align: top;
-}
-
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
 }
 
 .sp-only {
@@ -416,5 +411,306 @@ html {
         font-size: 1.8rem;
         padding: 15 0 15 24;
         color: #0080cc;
+    }
+}
+
+.p-top3 {
+    padding-top: 100px;
+
+    .l-container {
+        max-width: 880px;
+        margin: 0 auto;
+    }
+}
+
+.c-pam {
+    &__title {
+        font: {
+            size: 3.4rem;
+            weight: 500;
+        }
+        color: #0080cc;
+        text-align: center;
+        word-spacing: 0.6rem;
+    }
+
+    &__text {
+        text-align: center;
+        margin-top: 4px;
+        font-size: 1.6rem;
+    }
+
+    &__content {
+        display: flex;
+        margin-top: 33px;
+        padding-left: 40px;
+        padding-top: 40px;
+        padding-right: 40px;
+        padding-bottom: 17px;
+        border: 1px solid #0080cc;
+    }
+    
+    &__video {
+        width: 50%;
+        overflow: hidden;
+    }
+
+    &__image {
+        max-width: 50%;
+    }
+
+    &__row {
+        max-width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 25px;
+    }
+
+    &__item {
+        max-width: 45%;
+        margin-left: 20px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        &:hover {
+            .c-pam__icon {
+                background-color: rgba(255, 255, 255, 0.5);
+                opacity: 1;
+            }
+        }       
+
+        &:active {
+            .c-pam__icon {
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+    }
+
+    &__icon {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: transparent;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        opacity: 0;
+
+        img {
+            width: 30px;
+            margin-top: 35px;
+        }
+
+        &--text {
+            color: #005384;
+            opacity: 1;
+
+            font: {
+                size: 1.8rem;
+                weight: 700;
+            }
+        }
+    }
+
+    &__modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 0;
+        height: 0;
+        overflow: scroll;
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        background-color: rgba(255, 255, 255, 0.95);
+
+    }
+}
+
+.p-top4 {
+    padding-top: 100px;
+    margin-top: 14px;
+
+    .l-container {
+        max-width: 880px;
+        margin: 0 auto;
+    }
+}
+
+.c-head {
+    font-size: 3.4rem;
+    text-align: center;
+    color: #0080cc;
+    font-weight: 500;
+}
+
+.c-des {
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.75;
+    margin-top: 19px;
+}
+
+.c-career {
+    margin-top: 78px;
+
+    &__inner {
+        position: relative;
+    }
+
+    &__image {
+        position: relative;
+        width: 100%;
+        height: 675px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            // object-fit: cover;
+        }
+    }
+
+    &__box {
+        position: absolute;
+        left: 50%;
+        top: 95px;
+        transform: translateX(-98%);
+    }
+
+    &__content {
+        max-width: 490px;
+        background-color: #fff;
+        padding: 40 24 30 40;
+    }
+
+    &__title {
+        font-size: 3.4rem;
+        color: #0080cc;
+        font-weight: 500;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        line-height: 1.87;
+    }
+}
+
+.p-top5 {
+    margin-top: 5px;    
+}
+
+.c-doc {
+    margin-top: 80px;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 105px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: calc(50% + 320px);
+        z-index: -100;
+        background-color: #f8f8f8;
+        box-sizing: border-box;
+    }
+
+    &__inner {
+        max-width: 960px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        font-size: 3.4rem;
+        color: #0080cc;
+        font-weight: 500;
+        letter-spacing: 0.1rem;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        margin-bottom: 18px;
+        padding-left: 40px;
+    }
+
+    &__p {
+        color: #0080cc;
+        font-size: 2.5rem;
+        font-weight: 700;
+    }
+
+    &__des {
+        color: #0080cc;
+        font-size: 1.6rem;
+        font-weight: 400;
+        padding: 15 224 20 87;
+        border-left: 1px solid #0080cc;
+    }
+
+    &__final {
+        position: relative;
+        max-width: 652px;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #ff5800;
+        text-align: center;
+        margin-left: 80px;
+        margin-top: 36px;
+        padding-top: 34px;
+        padding-bottom: 26px;
+        padding-left: 80px;
+        padding-right: 80px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 42px;
+            height: 42px;
+            background-image: url('/assets/images/group87.png');
+            background-size: cover;            
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 42px;
+            height: 42px;
+            background-image: url('/assets/images/group88.png');
+            background-size: cover;
+        }
+    }
+}
+
+.p-top6 {
+    position: relative;
+    overflow: hidden;
+    margin-top: 0;
+
+    .l-container {
+        max-width: 1040px;
+        margin: 0 auto;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fdfbef;
+        z-index: -100;
+        left: calc(50% - 80px);
+        box-sizing: border-box;
     }
 }
