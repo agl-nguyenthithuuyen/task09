@@ -1,0 +1,120 @@
+.c-footer {
+    margin-top: 85px;
+    border-top: 1px solid #0080cc;
+
+    &__inner {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        height: 80px;
+        padding-left: 21px;
+        padding-right: 20px;
+        padding-top: 16px;
+    }
+
+    &__logo {
+        max-width: 14.2%;
+        margin-top: 10px;
+    }
+
+    &__nav {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-top: 9px;
+        margin-right: 26px;
+        white-space: nowrap;
+        background-color: #fff;
+    
+        li {
+            font-size: 1.6rem;
+            color: #0080cc;
+            font-weight: 400;
+            text-align: center;
+    
+            a {
+                position: relative;
+                line-height: 4.5rem;
+                padding: 0 16px;
+    
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -4px;
+                    left: 16px;
+                    width: 0;
+                    height: 2px;
+                    background-color: #0080cc;
+                }
+    
+                &:hover {
+                    &::after {
+                        width: calc(100% - 32px);
+                        transition: 0.3s linear;
+                    }
+                }
+            }
+        }
+    }
+
+    &__recruit {
+        margin-top: 4px;
+    
+        img {
+            display: inline-block;
+            width: 20px;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        justify-items: center;
+        font-size: 1.8rem;
+        font-weight: 400;
+        margin-left: 6px;
+        color: #fff;
+    }
+
+    &__link {
+        padding: 14px 40px 10px 34px;
+        background-color: #0080cc;
+        border-radius: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: 0.3rem;
+        white-space: nowrap;
+    }
+
+    &__mess {
+        padding-left: 60px;
+        padding-top: 13px;
+        padding-right: 60px;
+        margin-top: 11px;
+        text-align: right;
+        border-top: 1px solid #efefef;
+    
+        a {
+            color: #a0a0a0;
+            text-decoration: underline;
+        }
+    }
+
+    &__mess--inner {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__coppy--right {
+        font-size: 1.4rem;
+        font-weight: 400;
+        color: #fff;
+        background-color: #0080cc;
+        text-align: center;
+        padding-top: 17px;
+        padding-bottom: 17px;
+        margin-top: 11px;
+    }
+}

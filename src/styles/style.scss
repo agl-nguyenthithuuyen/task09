@@ -60,7 +60,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
 body {
     box-sizing: border-box;
     font-family: '游ゴシック', Yu Gothic, YuGothic, 'ヒラギノ角ゴ Pro', 'Hiragino Kaku Gothic Pro', 'メイリオ', 'Meiryo', sans-serif;
@@ -78,178 +77,6 @@ body {
     display: none;
 }
 
-.c-header {
-    background-color: #fff;
-
-    &__inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 21px;
-        padding-right: 20px;
-        padding-top: 14px;
-        padding-bottom: 12px;
-        background-color: #fff;
-    }
-
-    &__logo {
-        max-width: 14.2%;
-        z-index: 1000;
-    }
-
-    &__nav {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 10px;
-        margin-right: 26px;
-        white-space: nowrap;
-        background-color: #fff;
-
-        li {
-            font-size: 1.6rem;
-            color: #0080cc;
-            font-weight: 400;
-            text-align: center;
-    
-            a {
-                position: relative;
-                line-height: 4.5rem;
-                padding: 0 20px;
-    
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -4px;
-                    left: 20px;
-                    width: 0;
-                    height: 2px;
-                    background-color: #0080cc;
-                }
-    
-                &:hover {
-                    &::after {
-                        width: calc(100% - 40px);
-                        transition: 0.3s linear;
-                    }
-                }
-            }
-    
-            &:active {
-                &::after {
-                    width: calc(100% - 40px);
-                }
-            }
-        }
-    }
-
-    &__icon--play {
-        width: 24px;
-        margin-right: 10px;
-    }
-
-    &__recruit {
-        margin-top: 2px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    
-        img {
-            display: inline-block;
-            width: 20px;
-        }
-
-        &--container {
-            width: 100%;
-            padding-left: 20px;
-            padding-right: 20px;
-            margin-top: 35px;
-        }
-    }
-
-    &__menu {    
-        img {
-            width: 30px;
-        }
-    
-        &--img1 {
-            display: none;
-        }
-    
-        &--img2 {
-            display: block;
-        }
-    
-        &:active {
-            &--img1 {
-                display: block;
-            }
-        
-            &--img2 {
-                display: none;
-            }
-        }
-    
-    }
-
-    &__text {
-        display: inline-block;
-        justify-items: center;
-        font-size: 1.8rem;
-        font-weight: 400;
-        margin-left: 6px;
-        color: #fff;
-    }
-
-    &__link {
-        padding: 14px 40px 10px 34px;
-        background-color: #0080cc;
-        border-radius: 9px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: 0.3rem;
-        white-space: nowrap;
-    }
-
-    &__recruit--sub {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #0080cc;
-        padding-top: 14px;
-        padding-bottom: 10px;
-        border-radius: 10px;
-        position: relative;
-    
-        img {
-            width: 27px;
-            margin-left: 26px;
-        }
-    
-        &::before {
-            content: '';
-            position: absolute;
-            left: 8%;
-            top: 50%;
-            transform: translateY(-50%);
-            background-image: url('assets/image/assignment.png');
-            width: 27px;
-            height: 27px;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    }
-
-    &__text--sub {
-        font-size: 2.4rem;
-        color: #fff;
-        font-weight: 500;
-    }
-}
-
 @media screen and (max-width: 768px) {
     .pc-only {
         display: none;
@@ -257,127 +84,6 @@ body {
 
     .sp-only {
         display: block;
-    }
-}
-
-.c-footer {
-    margin-top: 85px;
-    border-top: 1px solid #0080cc;
-
-    &__inner {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        height: 80px;
-        padding-left: 21px;
-        padding-right: 20px;
-        padding-top: 16px;
-    }
-
-    &__logo {
-        max-width: 14.2%;
-        margin-top: 10px;
-    }
-
-    &__nav {
-        flex: 1;
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        margin-top: 9px;
-        margin-right: 26px;
-        white-space: nowrap;
-        background-color: #fff;
-    
-        li {
-            font-size: 1.6rem;
-            color: #0080cc;
-            font-weight: 400;
-            text-align: center;
-    
-            a {
-                position: relative;
-                line-height: 4.5rem;
-                padding: 0 16px;
-    
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -4px;
-                    left: 16px;
-                    width: 0;
-                    height: 2px;
-                    background-color: #0080cc;
-                }
-    
-                &:hover {
-                    &::after {
-                        width: calc(100% - 32px);
-                        transition: 0.3s linear;
-                    }
-                }
-            }
-        }
-    }
-
-    &__recruit {
-        margin-top: 4px;
-    
-        img {
-            display: inline-block;
-            width: 20px;
-        }
-    }
-
-    &__text {
-        display: inline-block;
-        justify-items: center;
-        font-size: 1.8rem;
-        font-weight: 400;
-        margin-left: 6px;
-        color: #fff;
-    }
-
-    &__link {
-        padding: 14px 40px 10px 34px;
-        background-color: #0080cc;
-        border-radius: 9px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        letter-spacing: 0.3rem;
-        white-space: nowrap;
-    }
-
-    &__mess {
-        padding-left: 60px;
-        padding-top: 13px;
-        padding-right: 60px;
-        margin-top: 11px;
-        text-align: right;
-        border-top: 1px solid #efefef;
-    
-        a {
-            color: #a0a0a0;
-            text-decoration: underline;
-        }
-    }
-
-    &__mess--inner {
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    &__coppy--right {
-        font-size: 1.4rem;
-        font-weight: 400;
-        color: #fff;
-        background-color: #0080cc;
-        text-align: center;
-        padding-top: 17px;
-        padding-bottom: 17px;
-        margin-top: 11px;
     }
 }
 
@@ -636,7 +342,7 @@ body {
 
     &__heading {
         font-size: 3.4rem;
-        font-weight: 500;
+        font-weight: 600;
         color: #0080cc;
         text-align: center;
         letter-spacing: 0.2rem;
@@ -670,11 +376,36 @@ body {
         font-size: 3.4rem;
         color: #0080cc;
         letter-spacing: 0.25rem;
+        font-weight: 500;
     }
 
     &__text2 {
         font-size: 1.6rem;
         margin-top: 5px;
         margin-bottom: 30px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: stretch;
+        margin-top: 20px;
+        border: 1px solid #0080cc;
+    }
+
+    &__number {
+        min-width: 55px;
+        background-color: #0080cc;
+        font-size: 2rem;
+        color: #fff;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__txt {
+        font-size: 1.8rem;
+        padding: 15 0 15 24;
+        color: #0080cc;
     }
 }
