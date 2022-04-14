@@ -1,5 +1,10 @@
 .c-header {
     background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10000000;
 
     &__inner {
         display: flex;
@@ -155,7 +160,7 @@
             left: 8%;
             top: 50%;
             transform: translateY(-50%);
-            background-image: url('/assets/image/assignment.png');
+            background-image: url('/assets/images/assignment.png');
             width: 27px;
             height: 27px;
             background-repeat: no-repeat;

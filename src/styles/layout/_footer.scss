@@ -1,15 +1,12 @@
 .c-footer {
-    margin-top: 85px;
+    margin-top: 80px;
     border-top: 1px solid #0080cc;
 
     &__inner {
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        height: 80px;
-        padding-left: 21px;
-        padding-right: 20px;
-        padding-top: 16px;
+        padding: 20px;
     }
 
     &__logo {
@@ -89,9 +86,8 @@
 
     &__mess {
         padding-left: 60px;
-        padding-top: 13px;
-        padding-right: 60px;
-        margin-top: 11px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         text-align: right;
         border-top: 1px solid #efefef;
     
@@ -113,8 +109,8 @@
         color: #fff;
         background-color: #0080cc;
         text-align: center;
-        padding-top: 17px;
-        padding-bottom: 17px;
-        margin-top: 11px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        line-height: 30px;
     }
 }

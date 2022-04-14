@@ -14,10 +14,26 @@ const keyword = 'Home';
     <main class="c-main">
         <section class="c-mainvisual">
             <div class="c-mainvisual__image">
-                <img class="c-mainvisual__image--item scale1" src="/assets/images/entex_0605-15.jpg" alt="">
-                <img class="c-mainvisual__image--item" src="/assets/images/entex_0605-89.jpg" alt="">
-                <img class="c-mainvisual__image--item" src="/assets/images/entex_0605-117.jpg" alt="">
+                <img class="c-mainvisual__image--item c-slide__Zoom" src="/assets/images/entex_0605-15.jpg" alt="">
+                <img class="c-mainvisual__image--item c-slide__LeftRight" src="/assets/images/entex_0605-89.jpg" alt="">
+                <img class="c-mainvisual__image--item c-slide__TopBot" src="/assets/images/entex_0605-117.jpg" alt="">
             </div>
+            <script>
+                var myIndex = 0;
+                carousel();
+
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("c-mainvisual__image--item");
+                    for ( i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    myIndex++;
+                    if (myIndex > x.length) {myIndex = 1}
+                    x[myIndex-1].style.display = "block";
+                    setTimeout(carousel, 5000);
+                }
+            </script>
             <div class="c-mainvisual__inner">
                 <h1 class="c-mainvisual__text">
                     <p>若い力を</p>
@@ -268,27 +284,27 @@ const keyword = 'Home';
         </section>
         <section class="p-top6">
             <div class="l-container">
-                <div class="c-work">
-                    <div class="c-work__inner">
-                        <div class="c-work__image">
-                            <div class=""><img src="/assets/images/work01.jpg" alt=""></div>
-                            <div class=""><img src="/assets/images/work02.jpg" alt=""></div>
-                            <div class=" tl-only"><img src="/assets/images/work02_sp.jpg" alt=""></div>
-                            <div class=""><img src="/assets/images/work03.jpg" alt=""></div>
-                            <div class=""><img src="/assets/images/work04.jpg" alt=""></div>
+                <div class="c-intro">
+                    <div class="c-intro__inner">
+                        <div class="c-intro__listImage">
+                            <div class="c-intro__image"><img src="/assets/images/work01.jpg" alt="image_work1"></div>
+                            <div class="c-intro__image"><img src="/assets/images/work02.jpg" alt="image_work2"></div>
+                            <div class="c-intro__image tl-only"><img src="/assets/images/work02_sp.jpg" alt="image_workSP"></div>
+                            <div class="c-intro__image"><img src="/assets/images/work03.jpg" alt="image_work3"></div>
+                            <div class="c-intro__image"><img src="/assets/images/work04.jpg" alt="image_work4"></div>
                         </div>
-                        <div class="c-work__text">
-                            <p>充実した福利厚生サービス</p>
-                            <p>● 遠方から弊社に入社される人は、ENTEX本社の上に社宅(社員 寮)があります。</p>
-                            <p>※現在は満室のため、近くのワンルームから（自転車通勤圏内）通勤していただきます。</p>
-                            <p>● 年1回社員旅行を開催<span>(参加希望者のみ)</span></p>
-                            <p>※社員旅行積立金3,000円（会社が旅費の半分以上を負担）</p>
-                            <p>
+                        <div class="c-intro__listText">
+                            <p class="c-intro__text1">充実した福利厚生サービス</p>
+                            <p class="c-intro__text">● 遠方から弊社に入社される人は、ENTEX本社の上に社宅(社員 寮)があります。</p>
+                            <p class="c-intro__text3">※現在は満室のため、近くのワンルームから（自転車通勤圏内）通勤していただきます。</p>
+                            <p class="c-intro__text">● 年1回社員旅行を開催<span> (参加希望者のみ)</span></p>
+                            <p class="c-intro__text5">※社員旅行積立金3,000円（会社が旅費の半分以上を負担）</p>
+                            <p class="c-intro__text6">
                                 ● 社会保険完備<span>(雇用保険、労災保険、健康保険、厚生年金）</span>
-                                <br> ● 希望者参加型の食事会<strong>(費用は会社負担)</strong>
+                                <br> ● 希望者参加型の食事会 (費用は会社負担)
                                 <br> ● 各種手当も充実
                             </p>
-                            <ul>
+                            <ul class="c-intro__textul">
                                 <li>・皆勤手当：5,000円</li>
                                 <li>・雨天手当：1,000円</li>
                                 <li>・固定休日手当：5日分（賃金単価による）</li>
@@ -297,14 +313,88 @@ const keyword = 'Home';
                                 <li>・技能手当</li>
                                 <li>・通勤手当：月3万円まで</li>
                             </ul>
-                            <p> ● 昇給あり <br> ● 賞与あり（夏・冬 年2回） </p>
+                            <p class="c-intro__text">● 昇給あり</p>
+                            <p class="c-intro__text">● 賞与あり（夏・冬 年2回）</p>
+                            <div class="c-intro__textFinal">
+                                <p class="c-intro__text1">独立支援制度も充実!</p>
+                                <p class="c-intro__text">● 独立支援制度</p>
+                                <ul class="c-intro__textul">
+                                    <li>資格取得費用の援助</li>
+                                    <li>・座学（法律、行政への対応）の勉強支援</li>
+                                    <li>・仕入先の紹介</li>
+                                    <li>・顧問税理士、行政書士、弁護士の紹介</li>
+                                </ul>
+                            </div>                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="p-top7">
-            <div></div>
+        <section class="p-top7" id="intaview">
+            <div class="l-container">
+                <h2 class="c-head">先輩社員からのメッセージ</h2>
+                <p class="c-des">未経験で入社した多くのメンバーが活躍しています。<br> 各部門で活躍する現役メンバーたちの「リアルな声」をお届けします。</p>
+                <div class="c-interview">
+                    <div class="c-interview__inner">
+                        <div class="c-interview__list">
+                            <!-- 1 -->
+                            <div class="c-interview__item">
+                                <div class="c-interview__image">
+                                    <img src="/assets/images/entex_0605-88.jpg" alt="">
+                                    <div class="c-interview__icon">
+                                        <img src="/assets/images/zoom_in.png" alt="">
+                                        <div class="c-interview__iconText">INTERVIEW</div>
+                                    </div>
+                                </div>
+                                <p class="c-interview__title">いつも明るく元気に作業。朝も一番に出勤してます！</p>
+                                <div class="c-interview__play">
+                                    <img src="/assets/images/arrow_drop_down_circle.png" alt="">
+                                    <div class="c-interview__playText">
+                                        <p class="c-interview__playText--top">安川　聖 (30)</p>
+                                        <p class="c-interview__playText--bot">入社2年目・外構担当職人</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2 -->
+                            <div class="c-interview__item">
+                                <div class="c-interview__image">
+                                    <img src="/assets/images/entex_0605-94.jpg" alt="">
+                                    <div class="c-interview__icon">
+                                        <img src="/assets/images/zoom_in.png" alt="">
+                                        <div class="c-interview__iconText">INTERVIEW</div>
+                                    </div>
+                                </div>
+                                <p class="c-interview__title">職長として土木・外構工事の現場管理をしながら作業指示</p>
+                                <div class="c-interview__play">
+                                    <img src="/assets/images/arrow_drop_down_circle.png" alt="">
+                                    <div class="c-interview__playText">
+                                        <p class="c-interview__playText--top">福元　和稔 (45)</p>
+                                        <p class="c-interview__playText--bot">入社3年目・土木、外構担当職長</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 3 -->
+                            <div class="c-interview__item">
+                                <div class="c-interview__image">
+                                    <img src="/assets/images/entex_0605-97.jpg" alt="">
+                                    <div class="c-interview__icon">
+                                        <img src="/assets/images/zoom_in.png" alt="">
+                                        <div class="c-interview__iconText">INTERVIEW</div>
+                                    </div>
+                                </div>
+                                <p class="c-interview__title">高校卒業後に入社し、関西で妻と出会い結婚。外構部長へ</p>
+                                <div class="c-interview__play">
+                                    <img src="/assets/images/arrow_drop_down_circle.png" alt="">
+                                    <div class="c-interview__playText">
+                                        <p class="c-interview__playText--top">工藤　智成(41)</p>
+                                        <p class="c-interview__playText--bot">入社23年目・外構部長</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
         <section class="p-top8">
             <div class="l-container">
@@ -313,43 +403,278 @@ const keyword = 'Home';
                         <h2 class="c-depu__head">代表メッセージ</h2>
                         <div class="c-depu__para">
                             <div class="c-depu__text">
-                                <p>「学歴・経験不問。ポテンシャル重視で採用」</p>
-                                <p>弊社は、｢お客様に喜ばれる仕事をしよう｣という会社理念を掲げて社会貢献事業を行なっています。何か仕事で困った事があってもお客様の立場や、気持ちを考えれば社員一同、同じ方向を向いて仕事が出来ます。</p>
-                                <p> また、個人の目標も大切にしており弊社の全てのメンバーが夢、希望をもって仕事に取り組み楽しい職場作りを目指しております。 
+                                <p class="c-depu__text--P1">「学歴・経験不問。ポテンシャル重視で採用」</p>
+                                <p class="c-depu__text--P">弊社は、｢お客様に喜ばれる仕事をしよう｣という会社理念を掲げて社会貢献事業を行なっています。何か仕事で困った事があってもお客様の立場や、気持ちを考えれば社員一同、同じ方向を向いて仕事が出来ます。</p>
+                                <p class="c-depu__text--P"> また、個人の目標も大切にしており弊社の全てのメンバーが夢、希望をもって仕事に取り組み楽しい職場作りを目指しております。
                                     <br class="sp-only pc-only"> メンバー同士、助け合いの精神をもって規律正しく和気あいあいと作業を行なっています。
                                 </p>
-                                <p> 昔のように職人は誰でもなれる職業ではありません。身体も頭脳も健全でなければ一流の職人にはなれませんが、ENTEXでは多くのまだ若いプロの職人が親切、丁寧に教育しますので安心です。 </p>
+                                <p class="c-depu__text--P"> 昔のように職人は誰でもなれる職業ではありません。身体も頭脳も健全でなければ一流の職人にはなれませんが、ENTEXでは多くのまだ若いプロの職人が親切、丁寧に教育しますので安心です。</p>
                             </div>
-                            <div class="c-depu__img">
-                                <img src="/assets/images/person.jpg" alt="">
-                            </div>
+                            <div class="c-depu__img"><img src="/assets/images/person.jpg" alt="icon_person"></div>
                         </div>
-                        <p> 自分の作品として最低でも50年は施工場所が残る仕事です。 <br> 大切な家族や友人に、自分が施工した自慢の作品がすぐに理解できて貰える喜びが、 <br class="pc-only"> とても嬉しくて遣り甲斐のある仕事です。 </p>
-                        <p> 株式会社ENTEX <br class="sp-only"> 　代表取締役社長　遠藤 剛 </p>
+                        <p class="c-depu__para2">
+                            自分の作品として最低でも50年は施工場所が残る仕事です。<br> 大切な家族や友人に、自分が施工した自慢の作品がすぐに理解できて貰える喜びが、<br class="pc-only"> とても嬉しくて遣り甲斐のある仕事です。
+                        </p>
+                        <p class="c-depu__para3">株式会社ENTEX <br class="sp-only"> 　代表取締役社長　遠藤 剛 </p>
                         <div class="c-depu__txtFinal">社名の由来</div>
                         <div class="c-depu__box">
-                            <div class="c-depu__image">
-                                <a href="index.html"><img src="/assets/images/logo.png" alt=""></a>
-                            </div>
+                            <div class="c-depu__image"><a href="index.html"><img src="/assets/images/logo.png" alt="icon_logo"></a></div>
                             <div class="c-depu__list">
                                 <div class="c-depu__item">
-                                    <p>EN</p>
-                                    <img src="/dist/assets/images/line.png" alt="">
-                                    <p>当社代表「遠藤(Endo)」の頭文字</p>
+                                    <p class="c-depu__item--lang">EN</p>
+                                    <img src="/assets/images/line.png" alt="icon_line">
+                                    <p class="c-depu__item--des">当社代表「遠藤(Endo)」の頭文字</p>
                                 </div>
                                 <div class="c-depu__item">
-                                    <p>TE</p>
-                                    <img src="/dist/assets/images/line.png" alt="">
-                                    <p>テクノロジー(技術)</p>
+                                    <p class="c-depu__item--lang">TE</p>
+                                    <img src="/assets/images/line.png" alt="icon_line">
+                                    <p class="c-depu__item--des">テクノロジー(技術)</p>
                                 </div>
                                 <div class="c-depu__item">
-                                    <p>X</p>
-                                    <img src="/dist/assets/images/line.png" alt="">
-                                    <p>無限に成長すると言う意味のX</p>
+                                    <p class="c-depu__item--lang">X</p>
+                                    <img src="/assets/images/line.png" alt="icon_line">
+                                    <p class="c-depu__item--des">無限に成長すると言う意味のX</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-recruit" id="recruit">
+            <div class="l-container">
+                <h2 class="c-head">採用情報</h2>
+                <p class="c-des">
+                    株式会社エンテックスでは、下記の人材を募集しています。
+                    <br>
+                    詳しくは募集要項をご確認ください。
+                </p>
+                <div class="c-recruit">
+                    <div class="c-recruit__top">
+                        <div class="c-recruit__top--left active">新卒採用</div>
+                        <div class="c-recruit__top--right">中途採用</div>
+                    </div>
+                    <div class="c-recruit__bot c-border__bot--tab">
+                        <!-- 1 -->
+                        <div class="c-recruit__item c-border__item--tab">
+                            <p class="c-recruit__item--title">職種</p>
+                            <p class="c-recruit__item--des c-hiddenText">外構工事・土木工事（未経験者）</p>
+                            <!-- <p class="c-recruit__item--des c-showText">外構工事・土木工事</p> -->
+                        </div>
+                        <!-- 2 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">仕事内容</p>
+                            <p class="c-recruit__item--des">外構工事、土木工事、各種工事 <br> 各種解体業 <br> 新築販売(設計・施工・販売)、リフォーム事業、宅地建物取引業</p>
+                        </div>
+                        <!-- 3 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">雇用形態</p>
+                            <p class="c-recruit__item--des">正社員</p>
+                        </div>
+                        <!-- 4 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">応募資格</p>
+                            <p class="c-recruit__item--des">土木、建設、建築を学んだ方、未経験者も可 <br> 普通自動車免許取得者</p>
+                        </div>
+                        <!-- 5 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">給与</p>
+                            <p class="c-recruit__item--des">外構工事・土木工事（未経験者）194,000円～282,000円</p>
+                        </div>
+                        <!-- 6 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">昇給賞与</p>
+                            <p class="c-recruit__item--des">
+                                昇給年に１回
+                                <br>
+                                賞与年に2回（夏、冬）
+                            </p>
+                        </div>
+                        <!-- 7 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">諸手当</p>
+                            <p class="c-recruit__item--des">
+                                皆勤手当：5,000円
+                                <br>
+                                固定休日手当：5日分（賃金単価による）
+                                <br>
+                                資格手当: 内容により上限20,000円
+                                <br>
+                                残業手当あり
+                            </p>
+                        </div>
+                        <!-- 8 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">福利厚生</p>
+                            <p class="c-recruit__item--des">社会保険完備（健康保険、厚生年金保険、労災保険、雇用保険）</p>
+                        </div>
+                        <!-- 9 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">勤務地</p>
+                            <p class="c-recruit__item--des">〒662-0928 兵庫県西宮市石在町17-41</p>
+                        </div>
+                        <!-- 10 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">勤務時間</p>
+                            <p class="c-recruit__item--des">8:00 ～ 17:00　変形(１年単位)</p>
+                        </div>
+                        <!-- 11 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">休日休暇</p>
+                            <p class="c-recruit__item--des">日・祝　会社カレンダーによる　夏季・年末年始</p>
+                        </div>
+                        <!-- 12 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">採用担当</p>
+                            <p class="c-recruit__item--des">遠藤</p>
+                        </div>
+                        <!-- 13 -->
+                        <div class="c-recruit__item">
+                            <p class="c-recruit__item--title">応募者向け <br> メッセージ</p>
+                            <p class="c-recruit__item--des">阪神間でNo.1を誇る外構･エクステリア業者です。お客様に喜ばれる仕事を理念に掲げ、即戦力となる社員育成を行っております。幅広い仕事をこなす事が出来、年に一度上司によるキャリアアップ等に関する面談、資格取得支援もありスキルアップのチャンスがあります。</p>
+                        </div>
+                        <div class="c-recruit__button">
+                            <div class="c-recruit__buttonLeft">
+                                <a href="#" class="c-recruit__a">
+                                    <img class="c-recruit__img1" src="/assets/images/assignment.png" alt="">
+                                    <p>高校生の方はこちら</p>
+                                </a>
+                            </div>
+                            <div class="c-recruit__buttonRight">
+                                <a href="#" class="c-recruit__a">
+                                    <img class="c-recruit__img2" src="/assets/images/assignment.png" alt="">
+                                    <p>高校生以外の方はこちら</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="p-company" id="company">
+            <div class="l-container">
+                <h2 class="c-head">会社情報</h2>
+                <div class="c-company">
+                    <table class="c-company__table">
+                        <!-- 1 -->
+                        <tr>
+                            <th>商号</th>
+                            <td>株式会社　ENTEX（エンテックス）</td>
+                        </tr>
+                        <!-- 2 -->
+                        <tr>
+                            <th>代表取締役社長</th>
+                            <td>遠藤 剛</td>
+                        </tr>
+                        <!-- 3 -->
+                        <tr>
+                            <th>所在地</th>
+                            <td>〒662-0928　兵庫県西宮市石在町17-41</td>
+                        </tr>
+                        <!-- 4 -->
+                        <tr>
+                            <th>電話番号</th>
+                            <td>0798-23-6600</td>
+                        </tr>
+                        <!-- 5 -->
+                        <tr>
+                            <th>FAX</th>
+                            <td>0798-23-6611</td>
+                        </tr>
+                        <!-- 6 -->
+                        <tr>
+                            <th>E-mail</th>
+                            <td>office@entex.co.jp</td>
+                        </tr>
+                        <!-- 7 -->
+                        <tr>
+                            <th>資本金</th>
+                            <td>1000万円</td>
+                        </tr>
+                        <!-- 8 -->
+                        <tr>
+                            <th>営業種目</th>
+                            <td>
+                                １．エクステリアの設計・施工・販売
+                                <br>
+                                ２．造成土木の施工
+                                <br>
+                                ３．各種解体工事
+                                <br>
+                                ４．戸建新築住宅の設計・施工・販売
+                                <br>
+                                ５．リフォーム工事の設計・施工
+                                <br>
+                                ６．不動産の仲介・売買
+                            </td>
+                        </tr>
+                        <!-- 9 -->
+                        <tr>
+                            <th>取引先銀行</th>
+                            <td>
+                                三井住友銀行　西宮北口支店／みなと銀行　西宮支店
+                                <br>
+                                尼崎信用金庫　阪神西宮支店／日新信用金庫　西宮今津支店
+                            </td>
+                        </tr>
+                        <!-- 10 -->
+                        <tr>
+                            <th>職員</th>
+                            <td>7名（社長、営業本部長、営業2名、インテリアコーディネーター、事務員、経理）</td>
+                        </tr>
+                        <!-- 11 -->
+                        <tr>
+                            <th>施工管理者</th>
+                            <td>20名</td>
+                        </tr>
+                        <!-- 12 -->
+                        <tr>
+                            <th>所在地</th>
+                            <td>建設業許可　兵庫県知事（般-24）第212783号</td>
+                        </tr>
+                        <!-- 13 -->
+                        <tr>
+                            <th>産業廃棄物収集運搬</th>
+                            <td>第02700132723号、第02803132723号</td>
+                        </tr>
+                        <!-- 14 -->
+                        <tr>
+                            <th>宅地建物取引業</th>
+                            <td>兵庫県知事（1）第204254号</td>
+                        </tr>
+                        <!-- 15 -->
+                        <tr>
+                            <th>2級建築士事務所</th>
+                            <td>兵庫県知事登録第02 04382号</td>
+                        </tr>
+                        <!-- 16 -->
+                        <tr>
+                            <th>有資格者</th>
+                            <td>
+                                1級施工管理技士（1名）／　ブロック建築1級（2名）／　2級建築士（2名）／　2級土木施工管理技士（2名）／　2級管工事施工管理技士（1名）／　宅地建物取引士（2名）／　下水道排水設備工事責任技術者（1名）
+                            </td>
+                        </tr>
+                        <!-- 17 -->
+                        <tr>
+                            <th>車両</th>
+                            <td>トラック7台／軽乗用車3台／乗用車5台／ハイエース1台</td>
+                        </tr>
+                        <!-- 18 -->
+                        <tr>
+                            <th>厚生施設</th>
+                            <td>社員寮あり</td>
+                        </tr>
+                        <!-- 19 -->
+                        <tr>
+                            <th>産業廃棄物収集運搬</th>
+                            <td>第02700132723号、第02803132723号</td>
+                        </tr>
+                        <!-- 20 -->
+                        <tr>
+                            <th>アクセス</th>
+                            <td>西宮市役所から南へ徒歩10分</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </section>

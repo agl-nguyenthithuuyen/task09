@@ -6,6 +6,9 @@ const INTERVAL = 30
 const showBox1 = document.querySelectorAll('.c-pam__icon');
 const box = document.querySelector('.c-pam__modal');
 
+const tabLeft = document.querySelector('.c-recruit__tab--left');
+const tabRight = document.querySelector('.c-recruit__tab--right');
+
 showBox1[0].addEventListener('click', function(e) {
     e.stopPropagation();
     box.classList.add('active');
