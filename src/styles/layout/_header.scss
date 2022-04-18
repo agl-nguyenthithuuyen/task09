@@ -12,7 +12,7 @@
         justify-content: space-between;
         padding-left: 21px;
         padding-right: 20px;
-        padding-top: 14px;
+        padding-top: 13px;
         padding-bottom: 12px;
         background-color: #fff;
     }
@@ -42,6 +42,14 @@
                 position: relative;
                 line-height: 4.5rem;
                 padding: 0 20px;
+
+                &.c-active {
+                    width: calc(100% - 40px);
+
+                    &::after {
+                        width: calc(100% - 40px);                   
+                    }        
+                }
     
                 &::after {
                     content: '';
@@ -50,7 +58,7 @@
                     left: 20px;
                     width: 0;
                     height: 2px;
-                    background-color: #0080cc;
+                    background-color: #0080cc;                   
                 }
     
                 &:hover {

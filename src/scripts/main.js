@@ -1,86 +1,36 @@
-import $ from 'jquery';
-
-const $window = $(window)
-const INTERVAL = 30
-
-const showBox1 = document.querySelectorAll('.c-pam__icon');
-const box = document.querySelector('.c-pam__modal');
-
-const tabLeft = document.querySelector('.c-recruit__tab--left');
-const tabRight = document.querySelector('.c-recruit__tab--right');
-
-showBox1[0].addEventListener('click', function(e) {
-    e.stopPropagation();
-    box.classList.add('active');
-    let show = showItem[0].getAttribute('data-url');
-    boxImage.setAttribute('src', '/assets/images/' + show)
-})
-
-var setIn = function () {
-  var inRatio = 1
-  var $ins = $('[data-in]')
-
-  var onScroll = function () {
-    var windowHeight = $window.height()
-    var scrollTop = $window.scrollTop()
-
-    $ins.each(function () {
-      var $el = $(this)
-
-      if (!$el.is('[data-in-out]') && $el.hasClass('is-in')) {
-        return
-      }
-
-      var inOutTop = $el.data('in-top')
-      if (inOutTop) {
-        $el.toggleClass('is-in', scrollTop >= inOutTop)
-        return
-      }
-
-      var $group = $el.closest('[data-in-group]')
-      var elTop = $group.length ? $group.offset().top : $el.offset().top
-      $group.add($el).toggleClass('is-in', inRatio >= (elTop - scrollTop) / windowHeight)
-    })
-  }
-
-  // TODO: jQUery BUG
-  // $window.on({
-  //   scroll: $.throttle(INTERVAL, function () {
-  //     onScroll()
-  //   }),
-  //   load: function () {
-  //     onScroll()
-  //   },
-  // })
+// menu nav
+function menuOnScroll(mySection, myMenu, myClass) {
+    $(window).scroll(function(){
+        var elScroll = $(window).scrollTop();
+        $(mySection).each(function(i){
+            if ($(this).offset().top - $('.c-header').outerHeight() <= elScroll) {
+                $(myMenu).removeClass(myClass);
+                $(myMenu).eq(i).addClass(myClass);
+            }
+        });
+    });
 }
+menuOnScroll('.activescroll', '.c-header__nav li a', 'c-active');
 
-var setSmoothScroll = function () {
-  var runSmoothScroll = function ($target) {
-    if (!$target.length) return
-
-    var $offset = $('[data-scroll-offset]')
-    var targetTop = $target.offset().top
-    var offsetTop = $offset.length ? $offset.height() : 0
-    var scrollTop = targetTop - offsetTop
-    $('html, body').stop().animate(
-      {
-        scrollTop: scrollTop,
-      },
-      800,
-      'easeOutQuint'
-    )
-  }
-  $('a[href^="#"]:not([href="#"]), a[href^="./#"]').on('click', function (ev) {
-    var $target = $($(this).attr('href').replace(/^\.\//, ''))
-    runSmoothScroll($target)
-  })
-  $window.on({
-    load: function () {
-      var $target = $(window.location.hash)
-      runSmoothScroll($target)
-    },
-  })
-}
-
-setIn()
-setSmoothScroll()
+// show dialog photo & movie
+(function($) {
+    'use strict';
+  
+    var $accountDelete = $('#show-dialog'),
+    $accountDeleteDialog = $('#confirm-delete'),
+    transition;
+  
+    $accountDelete.on('click', function() {
+        $accountDeleteDialog[0].showModal();
+        transition = window.setTimeout(function() {
+            $accountDeleteDialog.addClass('dialog-scale');
+        }, 0.5);
+    });
+  
+    $('#cancel').on('click', function() {
+        $accountDeleteDialog[0].close();
+        $accountDeleteDialog.removeClass('dialog-scale');
+        clearTimeout(transition);
+    });
+  
+})(jQuery);
