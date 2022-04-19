@@ -13,24 +13,18 @@ function menuOnScroll(mySection, myMenu, myClass) {
 menuOnScroll('.activescroll', '.c-header__nav li a', 'c-active');
 
 // show dialog photo & movie
-(function($) {
-    'use strict';
-  
-    var $accountDelete = $('#show-dialog'),
-    $accountDeleteDialog = $('#confirm-delete'),
-    transition;
-  
-    $accountDelete.on('click', function() {
-        $accountDeleteDialog[0].showModal();
-        transition = window.setTimeout(function() {
-            $accountDeleteDialog.addClass('dialog-scale');
-        }, 0.5);
-    });
-  
-    $('#cancel').on('click', function() {
-        $accountDeleteDialog[0].close();
-        $accountDeleteDialog.removeClass('dialog-scale');
-        clearTimeout(transition);
-    });
-  
-})(jQuery);
+// var modal = document.getElementById('myModal');
+
+// var img = document.getElementById('myImg');
+// var modalImg = document.getElementById("img01");
+
+// img.onclick = function(){
+//     modal.style.display = "block";
+//     modalImg.src = this.src;
+// }
+
+// var span = document.getElementsByClassName("close")[0];
+
+// span.onclick = function() { 
+//     modal.style.display = "none";
+// }

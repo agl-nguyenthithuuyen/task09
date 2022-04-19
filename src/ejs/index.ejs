@@ -11,6 +11,8 @@ const keyword = 'Home';
 <body>
     <%- include('layout/_header', { basePath }); %>
 
+    
+
     <main class="c-main">
         <section class="c-mainvisual">
             <div class="c-mainvisual__image">
@@ -124,7 +126,7 @@ const keyword = 'Home';
                     <p class="c-pam__text">私たちの仕事内容の一部を <br class="sp-only"> 動画と写真でお伝えします。</p>
                     <div class="c-pam__content">
                         <div class="c-pam__video"><video src="/assets/images/video.mp4" autoplay muted><p>動画を再生するにはvideoタグをサポートしたブラウザが必要です。</p></video></div>
-                        <div class="c-pam__image">
+                        <div class="c-pam__image" >
                             <!-- row1 -->
                             <div class="c-pam__row">
                                 <div class="c-pam__item" data-url="entex_photos_01.jpg">
@@ -177,66 +179,49 @@ const keyword = 'Home';
                                 </div>
                             </div>
                             <!-- row4 -->
-                            <div class="c-pam__row">
-                                <div class="c-pam__item">
-                                    <img src="/assets/images/pam07.jpg" alt="">
+                            <div class="c-pam__row" id="myImg">
+                                <div class="c-pam__item" >
+                                    <img class="image" src="/assets/images/pam07.jpg" alt="">
                                     <div class="c-pam__icon">
                                         <img src="/assets/images/zoom_in.png" alt="">
                                         <div class="c-pam__icon--text">PICK UP</div>
                                     </div>
                                 </div>
-                                <div class="c-pam__item" id="show-dialog">
+                                <a class="c-pam__item" href="#popup1">
+                                    <!-- <div class="c-pam__item"> -->
                                     <img src="/assets/images/pam08.jpg" alt="">
+                                    
                                     <div class="c-pam__icon">
                                         <img src="/assets/images/zoom_in.png" alt="">
                                         <div class="c-pam__icon--text">PICK UP</div>
+                                    </div>
+                                <!-- </div> -->
+                                </a>
+                                
+                            </div>
+                            <div class="remodal" data-remodal-id="popup1" role="dialog">
+                                <div id="popup1">
+                                    <img src="/assets/images/entex_photos_08.jpg" alt="">
+                                    <div class="c-pam__button" data-remodal-action="close">
+                                        <img src="/assets/images/close.png" alt="">
+                                        <p>閉じる</p>
                                     </div>
                                 </div>
                             </div>
                             <!-- end row -->
-                            <!-- <section>
-        <button class="btn btn-danger boxed-action" id="delete-account">Delete Account</button>
-
-        <dialog id="confirm-delete" class="site-dialog">
-          <header class="dialog-header">
-            <h1>Please Confirm</h1>
-          </header>
-          <div class="dialog-content">
-          </div>
-          <div class="btn-group cf">
-            <button class="btn btn-danger" id="delete">Delete</button>
-            <button class="btn btn-cancel" id="cancel">Cancel</button>
-
-          </div>
-        </dialog>
-
-      </section> -->
                         </div>
                     </div>
-                    <div class="c-pam__modal">
+                    <div class="c-pam__modal" id="myModal">
                         <div class="c-pam__modal--inner">
                             <div class="c-pam__photo">
-                                <img src="/assets/images/entex_0605-29.jpg" alt="">
+                                <img id="img01" alt="" src="">
                             </div>
-                            <div class="c-pam__button" id="cancel">
+                            <div class="c-pam__button">
                                 <img src="/assets/images/close.png" alt="">
                                 <p>閉じる</p>
                             </div>
                         </div>
-                    </div>
-                    <!-- <dialog id="confirm-delete" class="c-pam__modal">
-                        <div class=" ">
-                            <div class="c-pam__modal--inner">
-                                <div class="c-pam__photo">
-                                    <img src="/assets/images/entex_0605-29.jpg" alt="">
-                                </div>
-                                <div class="c-pam__button" id="cancel">
-                                    <img src="/assets/images/close.png" alt="">
-                                    <p>閉じる</p>
-                                </div>
-                            </div>
-                        </div>
-                    </dialog>                   -->
+                     </div>
                 </div>
             </div>
         </section>
@@ -695,4 +680,5 @@ const keyword = 'Home';
     <%- include('layout/_footer', { basePath }); %>
 
 </body>
+
 </html>
